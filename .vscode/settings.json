@@ -1,0 +1,10 @@
+
+// Workspace settings
+{
+    "files.exclude": {
+        "**/*.o": true,
+        "**/*.a": true,
+    },
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 90
+}

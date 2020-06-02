@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIR=/home/data/working/
+DIR=~/data/working
 mkdir -p ${DIR}/recipes/
 mkdir -p ${DIR}/index/
 
