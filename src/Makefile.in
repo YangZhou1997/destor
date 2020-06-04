@@ -104,16 +104,25 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libdestor_a_AR = $(AR) $(ARFLAGS)
 libdestor_a_LIBADD =
-am_libdestor_a_OBJECTS = destor.$(OBJEXT) jcr.$(OBJEXT) \
-	config.$(OBJEXT) do_backup.$(OBJEXT) read_phase.$(OBJEXT) \
-	chunk_phase.$(OBJEXT) hash_phase.$(OBJEXT) \
-	trace_phase.$(OBJEXT) dedup_phase.$(OBJEXT) \
-	rewrite_phase.$(OBJEXT) filter_phase.$(OBJEXT) \
-	cfl_rewrite.$(OBJEXT) cap_rewrite.$(OBJEXT) \
-	cbr_rewrite.$(OBJEXT) har_rewrite.$(OBJEXT) \
-	restore_aware.$(OBJEXT) do_restore.$(OBJEXT) \
-	optimal_restore.$(OBJEXT) assembly_restore.$(OBJEXT) \
-	cma.$(OBJEXT) do_delete.$(OBJEXT)
+am_libdestor_a_OBJECTS = libdestor_a-destor.$(OBJEXT) \
+	libdestor_a-jcr.$(OBJEXT) libdestor_a-config.$(OBJEXT) \
+	libdestor_a-do_backup.$(OBJEXT) \
+	libdestor_a-read_phase.$(OBJEXT) \
+	libdestor_a-chunk_phase.$(OBJEXT) \
+	libdestor_a-hash_phase.$(OBJEXT) \
+	libdestor_a-trace_phase.$(OBJEXT) \
+	libdestor_a-dedup_phase.$(OBJEXT) \
+	libdestor_a-rewrite_phase.$(OBJEXT) \
+	libdestor_a-filter_phase.$(OBJEXT) \
+	libdestor_a-cfl_rewrite.$(OBJEXT) \
+	libdestor_a-cap_rewrite.$(OBJEXT) \
+	libdestor_a-cbr_rewrite.$(OBJEXT) \
+	libdestor_a-har_rewrite.$(OBJEXT) \
+	libdestor_a-restore_aware.$(OBJEXT) \
+	libdestor_a-do_restore.$(OBJEXT) \
+	libdestor_a-optimal_restore.$(OBJEXT) \
+	libdestor_a-assembly_restore.$(OBJEXT) \
+	libdestor_a-cma.$(OBJEXT) libdestor_a-do_delete.$(OBJEXT)
 libdestor_a_OBJECTS = $(am_libdestor_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -131,6 +140,10 @@ DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_@AM_V@)
@@ -266,6 +279,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = libdestor.a
+libdestor_a_CFLAGS = $(GLIB_CFLAGS)
 libdestor_a_SOURCES = destor.c jcr.c config.c do_backup.c read_phase.c chunk_phase.c hash_phase.c trace_phase.c dedup_phase.c rewrite_phase.c filter_phase.c cfl_rewrite.c cap_rewrite.c cbr_rewrite.c har_rewrite.c restore_aware.c do_restore.c optimal_restore.c assembly_restore.c cma.c do_delete.c
 all: all-am
 
@@ -315,27 +329,27 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/assembly_restore.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cap_rewrite.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cbr_rewrite.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cfl_rewrite.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/chunk_phase.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cma.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/config.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dedup_phase.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/destor.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/do_backup.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/do_delete.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/do_restore.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filter_phase.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/har_rewrite.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hash_phase.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jcr.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/optimal_restore.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/read_phase.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/restore_aware.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rewrite_phase.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/trace_phase.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-assembly_restore.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-cap_rewrite.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-cbr_rewrite.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-cfl_rewrite.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-chunk_phase.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-cma.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-config.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-dedup_phase.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-destor.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-do_backup.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-do_delete.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-do_restore.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-filter_phase.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-har_rewrite.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-hash_phase.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-jcr.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-optimal_restore.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-read_phase.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-restore_aware.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-rewrite_phase.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdestor_a-trace_phase.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -350,6 +364,300 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+libdestor_a-destor.o: destor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-destor.o -MD -MP -MF $(DEPDIR)/libdestor_a-destor.Tpo -c -o libdestor_a-destor.o `test -f 'destor.c' || echo '$(srcdir)/'`destor.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-destor.Tpo $(DEPDIR)/libdestor_a-destor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='destor.c' object='libdestor_a-destor.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-destor.o `test -f 'destor.c' || echo '$(srcdir)/'`destor.c
+
+libdestor_a-destor.obj: destor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-destor.obj -MD -MP -MF $(DEPDIR)/libdestor_a-destor.Tpo -c -o libdestor_a-destor.obj `if test -f 'destor.c'; then $(CYGPATH_W) 'destor.c'; else $(CYGPATH_W) '$(srcdir)/destor.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-destor.Tpo $(DEPDIR)/libdestor_a-destor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='destor.c' object='libdestor_a-destor.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-destor.obj `if test -f 'destor.c'; then $(CYGPATH_W) 'destor.c'; else $(CYGPATH_W) '$(srcdir)/destor.c'; fi`
+
+libdestor_a-jcr.o: jcr.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-jcr.o -MD -MP -MF $(DEPDIR)/libdestor_a-jcr.Tpo -c -o libdestor_a-jcr.o `test -f 'jcr.c' || echo '$(srcdir)/'`jcr.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-jcr.Tpo $(DEPDIR)/libdestor_a-jcr.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='jcr.c' object='libdestor_a-jcr.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-jcr.o `test -f 'jcr.c' || echo '$(srcdir)/'`jcr.c
+
+libdestor_a-jcr.obj: jcr.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-jcr.obj -MD -MP -MF $(DEPDIR)/libdestor_a-jcr.Tpo -c -o libdestor_a-jcr.obj `if test -f 'jcr.c'; then $(CYGPATH_W) 'jcr.c'; else $(CYGPATH_W) '$(srcdir)/jcr.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-jcr.Tpo $(DEPDIR)/libdestor_a-jcr.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='jcr.c' object='libdestor_a-jcr.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-jcr.obj `if test -f 'jcr.c'; then $(CYGPATH_W) 'jcr.c'; else $(CYGPATH_W) '$(srcdir)/jcr.c'; fi`
+
+libdestor_a-config.o: config.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-config.o -MD -MP -MF $(DEPDIR)/libdestor_a-config.Tpo -c -o libdestor_a-config.o `test -f 'config.c' || echo '$(srcdir)/'`config.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-config.Tpo $(DEPDIR)/libdestor_a-config.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='config.c' object='libdestor_a-config.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-config.o `test -f 'config.c' || echo '$(srcdir)/'`config.c
+
+libdestor_a-config.obj: config.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-config.obj -MD -MP -MF $(DEPDIR)/libdestor_a-config.Tpo -c -o libdestor_a-config.obj `if test -f 'config.c'; then $(CYGPATH_W) 'config.c'; else $(CYGPATH_W) '$(srcdir)/config.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-config.Tpo $(DEPDIR)/libdestor_a-config.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='config.c' object='libdestor_a-config.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-config.obj `if test -f 'config.c'; then $(CYGPATH_W) 'config.c'; else $(CYGPATH_W) '$(srcdir)/config.c'; fi`
+
+libdestor_a-do_backup.o: do_backup.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-do_backup.o -MD -MP -MF $(DEPDIR)/libdestor_a-do_backup.Tpo -c -o libdestor_a-do_backup.o `test -f 'do_backup.c' || echo '$(srcdir)/'`do_backup.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-do_backup.Tpo $(DEPDIR)/libdestor_a-do_backup.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='do_backup.c' object='libdestor_a-do_backup.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-do_backup.o `test -f 'do_backup.c' || echo '$(srcdir)/'`do_backup.c
+
+libdestor_a-do_backup.obj: do_backup.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-do_backup.obj -MD -MP -MF $(DEPDIR)/libdestor_a-do_backup.Tpo -c -o libdestor_a-do_backup.obj `if test -f 'do_backup.c'; then $(CYGPATH_W) 'do_backup.c'; else $(CYGPATH_W) '$(srcdir)/do_backup.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-do_backup.Tpo $(DEPDIR)/libdestor_a-do_backup.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='do_backup.c' object='libdestor_a-do_backup.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-do_backup.obj `if test -f 'do_backup.c'; then $(CYGPATH_W) 'do_backup.c'; else $(CYGPATH_W) '$(srcdir)/do_backup.c'; fi`
+
+libdestor_a-read_phase.o: read_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-read_phase.o -MD -MP -MF $(DEPDIR)/libdestor_a-read_phase.Tpo -c -o libdestor_a-read_phase.o `test -f 'read_phase.c' || echo '$(srcdir)/'`read_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-read_phase.Tpo $(DEPDIR)/libdestor_a-read_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='read_phase.c' object='libdestor_a-read_phase.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-read_phase.o `test -f 'read_phase.c' || echo '$(srcdir)/'`read_phase.c
+
+libdestor_a-read_phase.obj: read_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-read_phase.obj -MD -MP -MF $(DEPDIR)/libdestor_a-read_phase.Tpo -c -o libdestor_a-read_phase.obj `if test -f 'read_phase.c'; then $(CYGPATH_W) 'read_phase.c'; else $(CYGPATH_W) '$(srcdir)/read_phase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-read_phase.Tpo $(DEPDIR)/libdestor_a-read_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='read_phase.c' object='libdestor_a-read_phase.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-read_phase.obj `if test -f 'read_phase.c'; then $(CYGPATH_W) 'read_phase.c'; else $(CYGPATH_W) '$(srcdir)/read_phase.c'; fi`
+
+libdestor_a-chunk_phase.o: chunk_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-chunk_phase.o -MD -MP -MF $(DEPDIR)/libdestor_a-chunk_phase.Tpo -c -o libdestor_a-chunk_phase.o `test -f 'chunk_phase.c' || echo '$(srcdir)/'`chunk_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-chunk_phase.Tpo $(DEPDIR)/libdestor_a-chunk_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='chunk_phase.c' object='libdestor_a-chunk_phase.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-chunk_phase.o `test -f 'chunk_phase.c' || echo '$(srcdir)/'`chunk_phase.c
+
+libdestor_a-chunk_phase.obj: chunk_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-chunk_phase.obj -MD -MP -MF $(DEPDIR)/libdestor_a-chunk_phase.Tpo -c -o libdestor_a-chunk_phase.obj `if test -f 'chunk_phase.c'; then $(CYGPATH_W) 'chunk_phase.c'; else $(CYGPATH_W) '$(srcdir)/chunk_phase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-chunk_phase.Tpo $(DEPDIR)/libdestor_a-chunk_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='chunk_phase.c' object='libdestor_a-chunk_phase.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-chunk_phase.obj `if test -f 'chunk_phase.c'; then $(CYGPATH_W) 'chunk_phase.c'; else $(CYGPATH_W) '$(srcdir)/chunk_phase.c'; fi`
+
+libdestor_a-hash_phase.o: hash_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-hash_phase.o -MD -MP -MF $(DEPDIR)/libdestor_a-hash_phase.Tpo -c -o libdestor_a-hash_phase.o `test -f 'hash_phase.c' || echo '$(srcdir)/'`hash_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-hash_phase.Tpo $(DEPDIR)/libdestor_a-hash_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='hash_phase.c' object='libdestor_a-hash_phase.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-hash_phase.o `test -f 'hash_phase.c' || echo '$(srcdir)/'`hash_phase.c
+
+libdestor_a-hash_phase.obj: hash_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-hash_phase.obj -MD -MP -MF $(DEPDIR)/libdestor_a-hash_phase.Tpo -c -o libdestor_a-hash_phase.obj `if test -f 'hash_phase.c'; then $(CYGPATH_W) 'hash_phase.c'; else $(CYGPATH_W) '$(srcdir)/hash_phase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-hash_phase.Tpo $(DEPDIR)/libdestor_a-hash_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='hash_phase.c' object='libdestor_a-hash_phase.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-hash_phase.obj `if test -f 'hash_phase.c'; then $(CYGPATH_W) 'hash_phase.c'; else $(CYGPATH_W) '$(srcdir)/hash_phase.c'; fi`
+
+libdestor_a-trace_phase.o: trace_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-trace_phase.o -MD -MP -MF $(DEPDIR)/libdestor_a-trace_phase.Tpo -c -o libdestor_a-trace_phase.o `test -f 'trace_phase.c' || echo '$(srcdir)/'`trace_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-trace_phase.Tpo $(DEPDIR)/libdestor_a-trace_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='trace_phase.c' object='libdestor_a-trace_phase.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-trace_phase.o `test -f 'trace_phase.c' || echo '$(srcdir)/'`trace_phase.c
+
+libdestor_a-trace_phase.obj: trace_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-trace_phase.obj -MD -MP -MF $(DEPDIR)/libdestor_a-trace_phase.Tpo -c -o libdestor_a-trace_phase.obj `if test -f 'trace_phase.c'; then $(CYGPATH_W) 'trace_phase.c'; else $(CYGPATH_W) '$(srcdir)/trace_phase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-trace_phase.Tpo $(DEPDIR)/libdestor_a-trace_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='trace_phase.c' object='libdestor_a-trace_phase.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-trace_phase.obj `if test -f 'trace_phase.c'; then $(CYGPATH_W) 'trace_phase.c'; else $(CYGPATH_W) '$(srcdir)/trace_phase.c'; fi`
+
+libdestor_a-dedup_phase.o: dedup_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-dedup_phase.o -MD -MP -MF $(DEPDIR)/libdestor_a-dedup_phase.Tpo -c -o libdestor_a-dedup_phase.o `test -f 'dedup_phase.c' || echo '$(srcdir)/'`dedup_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-dedup_phase.Tpo $(DEPDIR)/libdestor_a-dedup_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='dedup_phase.c' object='libdestor_a-dedup_phase.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-dedup_phase.o `test -f 'dedup_phase.c' || echo '$(srcdir)/'`dedup_phase.c
+
+libdestor_a-dedup_phase.obj: dedup_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-dedup_phase.obj -MD -MP -MF $(DEPDIR)/libdestor_a-dedup_phase.Tpo -c -o libdestor_a-dedup_phase.obj `if test -f 'dedup_phase.c'; then $(CYGPATH_W) 'dedup_phase.c'; else $(CYGPATH_W) '$(srcdir)/dedup_phase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-dedup_phase.Tpo $(DEPDIR)/libdestor_a-dedup_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='dedup_phase.c' object='libdestor_a-dedup_phase.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-dedup_phase.obj `if test -f 'dedup_phase.c'; then $(CYGPATH_W) 'dedup_phase.c'; else $(CYGPATH_W) '$(srcdir)/dedup_phase.c'; fi`
+
+libdestor_a-rewrite_phase.o: rewrite_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-rewrite_phase.o -MD -MP -MF $(DEPDIR)/libdestor_a-rewrite_phase.Tpo -c -o libdestor_a-rewrite_phase.o `test -f 'rewrite_phase.c' || echo '$(srcdir)/'`rewrite_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-rewrite_phase.Tpo $(DEPDIR)/libdestor_a-rewrite_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='rewrite_phase.c' object='libdestor_a-rewrite_phase.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-rewrite_phase.o `test -f 'rewrite_phase.c' || echo '$(srcdir)/'`rewrite_phase.c
+
+libdestor_a-rewrite_phase.obj: rewrite_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-rewrite_phase.obj -MD -MP -MF $(DEPDIR)/libdestor_a-rewrite_phase.Tpo -c -o libdestor_a-rewrite_phase.obj `if test -f 'rewrite_phase.c'; then $(CYGPATH_W) 'rewrite_phase.c'; else $(CYGPATH_W) '$(srcdir)/rewrite_phase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-rewrite_phase.Tpo $(DEPDIR)/libdestor_a-rewrite_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='rewrite_phase.c' object='libdestor_a-rewrite_phase.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-rewrite_phase.obj `if test -f 'rewrite_phase.c'; then $(CYGPATH_W) 'rewrite_phase.c'; else $(CYGPATH_W) '$(srcdir)/rewrite_phase.c'; fi`
+
+libdestor_a-filter_phase.o: filter_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-filter_phase.o -MD -MP -MF $(DEPDIR)/libdestor_a-filter_phase.Tpo -c -o libdestor_a-filter_phase.o `test -f 'filter_phase.c' || echo '$(srcdir)/'`filter_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-filter_phase.Tpo $(DEPDIR)/libdestor_a-filter_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='filter_phase.c' object='libdestor_a-filter_phase.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-filter_phase.o `test -f 'filter_phase.c' || echo '$(srcdir)/'`filter_phase.c
+
+libdestor_a-filter_phase.obj: filter_phase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-filter_phase.obj -MD -MP -MF $(DEPDIR)/libdestor_a-filter_phase.Tpo -c -o libdestor_a-filter_phase.obj `if test -f 'filter_phase.c'; then $(CYGPATH_W) 'filter_phase.c'; else $(CYGPATH_W) '$(srcdir)/filter_phase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-filter_phase.Tpo $(DEPDIR)/libdestor_a-filter_phase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='filter_phase.c' object='libdestor_a-filter_phase.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-filter_phase.obj `if test -f 'filter_phase.c'; then $(CYGPATH_W) 'filter_phase.c'; else $(CYGPATH_W) '$(srcdir)/filter_phase.c'; fi`
+
+libdestor_a-cfl_rewrite.o: cfl_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-cfl_rewrite.o -MD -MP -MF $(DEPDIR)/libdestor_a-cfl_rewrite.Tpo -c -o libdestor_a-cfl_rewrite.o `test -f 'cfl_rewrite.c' || echo '$(srcdir)/'`cfl_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-cfl_rewrite.Tpo $(DEPDIR)/libdestor_a-cfl_rewrite.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cfl_rewrite.c' object='libdestor_a-cfl_rewrite.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-cfl_rewrite.o `test -f 'cfl_rewrite.c' || echo '$(srcdir)/'`cfl_rewrite.c
+
+libdestor_a-cfl_rewrite.obj: cfl_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-cfl_rewrite.obj -MD -MP -MF $(DEPDIR)/libdestor_a-cfl_rewrite.Tpo -c -o libdestor_a-cfl_rewrite.obj `if test -f 'cfl_rewrite.c'; then $(CYGPATH_W) 'cfl_rewrite.c'; else $(CYGPATH_W) '$(srcdir)/cfl_rewrite.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-cfl_rewrite.Tpo $(DEPDIR)/libdestor_a-cfl_rewrite.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cfl_rewrite.c' object='libdestor_a-cfl_rewrite.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-cfl_rewrite.obj `if test -f 'cfl_rewrite.c'; then $(CYGPATH_W) 'cfl_rewrite.c'; else $(CYGPATH_W) '$(srcdir)/cfl_rewrite.c'; fi`
+
+libdestor_a-cap_rewrite.o: cap_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-cap_rewrite.o -MD -MP -MF $(DEPDIR)/libdestor_a-cap_rewrite.Tpo -c -o libdestor_a-cap_rewrite.o `test -f 'cap_rewrite.c' || echo '$(srcdir)/'`cap_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-cap_rewrite.Tpo $(DEPDIR)/libdestor_a-cap_rewrite.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cap_rewrite.c' object='libdestor_a-cap_rewrite.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-cap_rewrite.o `test -f 'cap_rewrite.c' || echo '$(srcdir)/'`cap_rewrite.c
+
+libdestor_a-cap_rewrite.obj: cap_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-cap_rewrite.obj -MD -MP -MF $(DEPDIR)/libdestor_a-cap_rewrite.Tpo -c -o libdestor_a-cap_rewrite.obj `if test -f 'cap_rewrite.c'; then $(CYGPATH_W) 'cap_rewrite.c'; else $(CYGPATH_W) '$(srcdir)/cap_rewrite.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-cap_rewrite.Tpo $(DEPDIR)/libdestor_a-cap_rewrite.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cap_rewrite.c' object='libdestor_a-cap_rewrite.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-cap_rewrite.obj `if test -f 'cap_rewrite.c'; then $(CYGPATH_W) 'cap_rewrite.c'; else $(CYGPATH_W) '$(srcdir)/cap_rewrite.c'; fi`
+
+libdestor_a-cbr_rewrite.o: cbr_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-cbr_rewrite.o -MD -MP -MF $(DEPDIR)/libdestor_a-cbr_rewrite.Tpo -c -o libdestor_a-cbr_rewrite.o `test -f 'cbr_rewrite.c' || echo '$(srcdir)/'`cbr_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-cbr_rewrite.Tpo $(DEPDIR)/libdestor_a-cbr_rewrite.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cbr_rewrite.c' object='libdestor_a-cbr_rewrite.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-cbr_rewrite.o `test -f 'cbr_rewrite.c' || echo '$(srcdir)/'`cbr_rewrite.c
+
+libdestor_a-cbr_rewrite.obj: cbr_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-cbr_rewrite.obj -MD -MP -MF $(DEPDIR)/libdestor_a-cbr_rewrite.Tpo -c -o libdestor_a-cbr_rewrite.obj `if test -f 'cbr_rewrite.c'; then $(CYGPATH_W) 'cbr_rewrite.c'; else $(CYGPATH_W) '$(srcdir)/cbr_rewrite.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-cbr_rewrite.Tpo $(DEPDIR)/libdestor_a-cbr_rewrite.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cbr_rewrite.c' object='libdestor_a-cbr_rewrite.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-cbr_rewrite.obj `if test -f 'cbr_rewrite.c'; then $(CYGPATH_W) 'cbr_rewrite.c'; else $(CYGPATH_W) '$(srcdir)/cbr_rewrite.c'; fi`
+
+libdestor_a-har_rewrite.o: har_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-har_rewrite.o -MD -MP -MF $(DEPDIR)/libdestor_a-har_rewrite.Tpo -c -o libdestor_a-har_rewrite.o `test -f 'har_rewrite.c' || echo '$(srcdir)/'`har_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-har_rewrite.Tpo $(DEPDIR)/libdestor_a-har_rewrite.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='har_rewrite.c' object='libdestor_a-har_rewrite.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-har_rewrite.o `test -f 'har_rewrite.c' || echo '$(srcdir)/'`har_rewrite.c
+
+libdestor_a-har_rewrite.obj: har_rewrite.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-har_rewrite.obj -MD -MP -MF $(DEPDIR)/libdestor_a-har_rewrite.Tpo -c -o libdestor_a-har_rewrite.obj `if test -f 'har_rewrite.c'; then $(CYGPATH_W) 'har_rewrite.c'; else $(CYGPATH_W) '$(srcdir)/har_rewrite.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-har_rewrite.Tpo $(DEPDIR)/libdestor_a-har_rewrite.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='har_rewrite.c' object='libdestor_a-har_rewrite.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-har_rewrite.obj `if test -f 'har_rewrite.c'; then $(CYGPATH_W) 'har_rewrite.c'; else $(CYGPATH_W) '$(srcdir)/har_rewrite.c'; fi`
+
+libdestor_a-restore_aware.o: restore_aware.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-restore_aware.o -MD -MP -MF $(DEPDIR)/libdestor_a-restore_aware.Tpo -c -o libdestor_a-restore_aware.o `test -f 'restore_aware.c' || echo '$(srcdir)/'`restore_aware.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-restore_aware.Tpo $(DEPDIR)/libdestor_a-restore_aware.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='restore_aware.c' object='libdestor_a-restore_aware.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-restore_aware.o `test -f 'restore_aware.c' || echo '$(srcdir)/'`restore_aware.c
+
+libdestor_a-restore_aware.obj: restore_aware.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-restore_aware.obj -MD -MP -MF $(DEPDIR)/libdestor_a-restore_aware.Tpo -c -o libdestor_a-restore_aware.obj `if test -f 'restore_aware.c'; then $(CYGPATH_W) 'restore_aware.c'; else $(CYGPATH_W) '$(srcdir)/restore_aware.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-restore_aware.Tpo $(DEPDIR)/libdestor_a-restore_aware.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='restore_aware.c' object='libdestor_a-restore_aware.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-restore_aware.obj `if test -f 'restore_aware.c'; then $(CYGPATH_W) 'restore_aware.c'; else $(CYGPATH_W) '$(srcdir)/restore_aware.c'; fi`
+
+libdestor_a-do_restore.o: do_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-do_restore.o -MD -MP -MF $(DEPDIR)/libdestor_a-do_restore.Tpo -c -o libdestor_a-do_restore.o `test -f 'do_restore.c' || echo '$(srcdir)/'`do_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-do_restore.Tpo $(DEPDIR)/libdestor_a-do_restore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='do_restore.c' object='libdestor_a-do_restore.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-do_restore.o `test -f 'do_restore.c' || echo '$(srcdir)/'`do_restore.c
+
+libdestor_a-do_restore.obj: do_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-do_restore.obj -MD -MP -MF $(DEPDIR)/libdestor_a-do_restore.Tpo -c -o libdestor_a-do_restore.obj `if test -f 'do_restore.c'; then $(CYGPATH_W) 'do_restore.c'; else $(CYGPATH_W) '$(srcdir)/do_restore.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-do_restore.Tpo $(DEPDIR)/libdestor_a-do_restore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='do_restore.c' object='libdestor_a-do_restore.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-do_restore.obj `if test -f 'do_restore.c'; then $(CYGPATH_W) 'do_restore.c'; else $(CYGPATH_W) '$(srcdir)/do_restore.c'; fi`
+
+libdestor_a-optimal_restore.o: optimal_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-optimal_restore.o -MD -MP -MF $(DEPDIR)/libdestor_a-optimal_restore.Tpo -c -o libdestor_a-optimal_restore.o `test -f 'optimal_restore.c' || echo '$(srcdir)/'`optimal_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-optimal_restore.Tpo $(DEPDIR)/libdestor_a-optimal_restore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='optimal_restore.c' object='libdestor_a-optimal_restore.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-optimal_restore.o `test -f 'optimal_restore.c' || echo '$(srcdir)/'`optimal_restore.c
+
+libdestor_a-optimal_restore.obj: optimal_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-optimal_restore.obj -MD -MP -MF $(DEPDIR)/libdestor_a-optimal_restore.Tpo -c -o libdestor_a-optimal_restore.obj `if test -f 'optimal_restore.c'; then $(CYGPATH_W) 'optimal_restore.c'; else $(CYGPATH_W) '$(srcdir)/optimal_restore.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-optimal_restore.Tpo $(DEPDIR)/libdestor_a-optimal_restore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='optimal_restore.c' object='libdestor_a-optimal_restore.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-optimal_restore.obj `if test -f 'optimal_restore.c'; then $(CYGPATH_W) 'optimal_restore.c'; else $(CYGPATH_W) '$(srcdir)/optimal_restore.c'; fi`
+
+libdestor_a-assembly_restore.o: assembly_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-assembly_restore.o -MD -MP -MF $(DEPDIR)/libdestor_a-assembly_restore.Tpo -c -o libdestor_a-assembly_restore.o `test -f 'assembly_restore.c' || echo '$(srcdir)/'`assembly_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-assembly_restore.Tpo $(DEPDIR)/libdestor_a-assembly_restore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='assembly_restore.c' object='libdestor_a-assembly_restore.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-assembly_restore.o `test -f 'assembly_restore.c' || echo '$(srcdir)/'`assembly_restore.c
+
+libdestor_a-assembly_restore.obj: assembly_restore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-assembly_restore.obj -MD -MP -MF $(DEPDIR)/libdestor_a-assembly_restore.Tpo -c -o libdestor_a-assembly_restore.obj `if test -f 'assembly_restore.c'; then $(CYGPATH_W) 'assembly_restore.c'; else $(CYGPATH_W) '$(srcdir)/assembly_restore.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-assembly_restore.Tpo $(DEPDIR)/libdestor_a-assembly_restore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='assembly_restore.c' object='libdestor_a-assembly_restore.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-assembly_restore.obj `if test -f 'assembly_restore.c'; then $(CYGPATH_W) 'assembly_restore.c'; else $(CYGPATH_W) '$(srcdir)/assembly_restore.c'; fi`
+
+libdestor_a-cma.o: cma.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-cma.o -MD -MP -MF $(DEPDIR)/libdestor_a-cma.Tpo -c -o libdestor_a-cma.o `test -f 'cma.c' || echo '$(srcdir)/'`cma.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-cma.Tpo $(DEPDIR)/libdestor_a-cma.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cma.c' object='libdestor_a-cma.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-cma.o `test -f 'cma.c' || echo '$(srcdir)/'`cma.c
+
+libdestor_a-cma.obj: cma.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-cma.obj -MD -MP -MF $(DEPDIR)/libdestor_a-cma.Tpo -c -o libdestor_a-cma.obj `if test -f 'cma.c'; then $(CYGPATH_W) 'cma.c'; else $(CYGPATH_W) '$(srcdir)/cma.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-cma.Tpo $(DEPDIR)/libdestor_a-cma.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cma.c' object='libdestor_a-cma.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-cma.obj `if test -f 'cma.c'; then $(CYGPATH_W) 'cma.c'; else $(CYGPATH_W) '$(srcdir)/cma.c'; fi`
+
+libdestor_a-do_delete.o: do_delete.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-do_delete.o -MD -MP -MF $(DEPDIR)/libdestor_a-do_delete.Tpo -c -o libdestor_a-do_delete.o `test -f 'do_delete.c' || echo '$(srcdir)/'`do_delete.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-do_delete.Tpo $(DEPDIR)/libdestor_a-do_delete.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='do_delete.c' object='libdestor_a-do_delete.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-do_delete.o `test -f 'do_delete.c' || echo '$(srcdir)/'`do_delete.c
+
+libdestor_a-do_delete.obj: do_delete.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -MT libdestor_a-do_delete.obj -MD -MP -MF $(DEPDIR)/libdestor_a-do_delete.Tpo -c -o libdestor_a-do_delete.obj `if test -f 'do_delete.c'; then $(CYGPATH_W) 'do_delete.c'; else $(CYGPATH_W) '$(srcdir)/do_delete.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdestor_a-do_delete.Tpo $(DEPDIR)/libdestor_a-do_delete.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='do_delete.c' object='libdestor_a-do_delete.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdestor_a_CFLAGS) $(CFLAGS) -c -o libdestor_a-do_delete.obj `if test -f 'do_delete.c'; then $(CYGPATH_W) 'do_delete.c'; else $(CYGPATH_W) '$(srcdir)/do_delete.c'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique

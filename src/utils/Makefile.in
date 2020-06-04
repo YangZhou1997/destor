@@ -104,9 +104,10 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libutils_a_AR = $(AR) $(ARFLAGS)
 libutils_a_LIBADD =
-am_libutils_a_OBJECTS = lru_cache.$(OBJEXT) sync_queue.$(OBJEXT) \
-	queue.$(OBJEXT) serial.$(OBJEXT) bloom_filter.$(OBJEXT) \
-	sds.$(OBJEXT)
+am_libutils_a_OBJECTS = libutils_a-lru_cache.$(OBJEXT) \
+	libutils_a-sync_queue.$(OBJEXT) libutils_a-queue.$(OBJEXT) \
+	libutils_a-serial.$(OBJEXT) libutils_a-bloom_filter.$(OBJEXT) \
+	libutils_a-sds.$(OBJEXT)
 libutils_a_OBJECTS = $(am_libutils_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -124,6 +125,10 @@ DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_@AM_V@)
@@ -259,6 +264,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = libutils.a
+libutils_a_CFLAGS = $(GLIB_CFLAGS)
 libutils_a_SOURCES = lru_cache.c sync_queue.c queue.c serial.c bloom_filter.c sds.c
 all: all-am
 
@@ -308,12 +314,12 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bloom_filter.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lru_cache.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/queue.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sds.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/serial.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sync_queue.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libutils_a-bloom_filter.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libutils_a-lru_cache.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libutils_a-queue.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libutils_a-sds.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libutils_a-serial.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libutils_a-sync_queue.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -328,6 +334,90 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+libutils_a-lru_cache.o: lru_cache.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-lru_cache.o -MD -MP -MF $(DEPDIR)/libutils_a-lru_cache.Tpo -c -o libutils_a-lru_cache.o `test -f 'lru_cache.c' || echo '$(srcdir)/'`lru_cache.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-lru_cache.Tpo $(DEPDIR)/libutils_a-lru_cache.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='lru_cache.c' object='libutils_a-lru_cache.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-lru_cache.o `test -f 'lru_cache.c' || echo '$(srcdir)/'`lru_cache.c
+
+libutils_a-lru_cache.obj: lru_cache.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-lru_cache.obj -MD -MP -MF $(DEPDIR)/libutils_a-lru_cache.Tpo -c -o libutils_a-lru_cache.obj `if test -f 'lru_cache.c'; then $(CYGPATH_W) 'lru_cache.c'; else $(CYGPATH_W) '$(srcdir)/lru_cache.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-lru_cache.Tpo $(DEPDIR)/libutils_a-lru_cache.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='lru_cache.c' object='libutils_a-lru_cache.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-lru_cache.obj `if test -f 'lru_cache.c'; then $(CYGPATH_W) 'lru_cache.c'; else $(CYGPATH_W) '$(srcdir)/lru_cache.c'; fi`
+
+libutils_a-sync_queue.o: sync_queue.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-sync_queue.o -MD -MP -MF $(DEPDIR)/libutils_a-sync_queue.Tpo -c -o libutils_a-sync_queue.o `test -f 'sync_queue.c' || echo '$(srcdir)/'`sync_queue.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-sync_queue.Tpo $(DEPDIR)/libutils_a-sync_queue.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='sync_queue.c' object='libutils_a-sync_queue.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-sync_queue.o `test -f 'sync_queue.c' || echo '$(srcdir)/'`sync_queue.c
+
+libutils_a-sync_queue.obj: sync_queue.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-sync_queue.obj -MD -MP -MF $(DEPDIR)/libutils_a-sync_queue.Tpo -c -o libutils_a-sync_queue.obj `if test -f 'sync_queue.c'; then $(CYGPATH_W) 'sync_queue.c'; else $(CYGPATH_W) '$(srcdir)/sync_queue.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-sync_queue.Tpo $(DEPDIR)/libutils_a-sync_queue.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='sync_queue.c' object='libutils_a-sync_queue.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-sync_queue.obj `if test -f 'sync_queue.c'; then $(CYGPATH_W) 'sync_queue.c'; else $(CYGPATH_W) '$(srcdir)/sync_queue.c'; fi`
+
+libutils_a-queue.o: queue.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-queue.o -MD -MP -MF $(DEPDIR)/libutils_a-queue.Tpo -c -o libutils_a-queue.o `test -f 'queue.c' || echo '$(srcdir)/'`queue.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-queue.Tpo $(DEPDIR)/libutils_a-queue.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='queue.c' object='libutils_a-queue.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-queue.o `test -f 'queue.c' || echo '$(srcdir)/'`queue.c
+
+libutils_a-queue.obj: queue.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-queue.obj -MD -MP -MF $(DEPDIR)/libutils_a-queue.Tpo -c -o libutils_a-queue.obj `if test -f 'queue.c'; then $(CYGPATH_W) 'queue.c'; else $(CYGPATH_W) '$(srcdir)/queue.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-queue.Tpo $(DEPDIR)/libutils_a-queue.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='queue.c' object='libutils_a-queue.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-queue.obj `if test -f 'queue.c'; then $(CYGPATH_W) 'queue.c'; else $(CYGPATH_W) '$(srcdir)/queue.c'; fi`
+
+libutils_a-serial.o: serial.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-serial.o -MD -MP -MF $(DEPDIR)/libutils_a-serial.Tpo -c -o libutils_a-serial.o `test -f 'serial.c' || echo '$(srcdir)/'`serial.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-serial.Tpo $(DEPDIR)/libutils_a-serial.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='serial.c' object='libutils_a-serial.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-serial.o `test -f 'serial.c' || echo '$(srcdir)/'`serial.c
+
+libutils_a-serial.obj: serial.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-serial.obj -MD -MP -MF $(DEPDIR)/libutils_a-serial.Tpo -c -o libutils_a-serial.obj `if test -f 'serial.c'; then $(CYGPATH_W) 'serial.c'; else $(CYGPATH_W) '$(srcdir)/serial.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-serial.Tpo $(DEPDIR)/libutils_a-serial.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='serial.c' object='libutils_a-serial.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-serial.obj `if test -f 'serial.c'; then $(CYGPATH_W) 'serial.c'; else $(CYGPATH_W) '$(srcdir)/serial.c'; fi`
+
+libutils_a-bloom_filter.o: bloom_filter.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-bloom_filter.o -MD -MP -MF $(DEPDIR)/libutils_a-bloom_filter.Tpo -c -o libutils_a-bloom_filter.o `test -f 'bloom_filter.c' || echo '$(srcdir)/'`bloom_filter.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-bloom_filter.Tpo $(DEPDIR)/libutils_a-bloom_filter.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='bloom_filter.c' object='libutils_a-bloom_filter.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-bloom_filter.o `test -f 'bloom_filter.c' || echo '$(srcdir)/'`bloom_filter.c
+
+libutils_a-bloom_filter.obj: bloom_filter.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-bloom_filter.obj -MD -MP -MF $(DEPDIR)/libutils_a-bloom_filter.Tpo -c -o libutils_a-bloom_filter.obj `if test -f 'bloom_filter.c'; then $(CYGPATH_W) 'bloom_filter.c'; else $(CYGPATH_W) '$(srcdir)/bloom_filter.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-bloom_filter.Tpo $(DEPDIR)/libutils_a-bloom_filter.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='bloom_filter.c' object='libutils_a-bloom_filter.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-bloom_filter.obj `if test -f 'bloom_filter.c'; then $(CYGPATH_W) 'bloom_filter.c'; else $(CYGPATH_W) '$(srcdir)/bloom_filter.c'; fi`
+
+libutils_a-sds.o: sds.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-sds.o -MD -MP -MF $(DEPDIR)/libutils_a-sds.Tpo -c -o libutils_a-sds.o `test -f 'sds.c' || echo '$(srcdir)/'`sds.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-sds.Tpo $(DEPDIR)/libutils_a-sds.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='sds.c' object='libutils_a-sds.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-sds.o `test -f 'sds.c' || echo '$(srcdir)/'`sds.c
+
+libutils_a-sds.obj: sds.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -MT libutils_a-sds.obj -MD -MP -MF $(DEPDIR)/libutils_a-sds.Tpo -c -o libutils_a-sds.obj `if test -f 'sds.c'; then $(CYGPATH_W) 'sds.c'; else $(CYGPATH_W) '$(srcdir)/sds.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libutils_a-sds.Tpo $(DEPDIR)/libutils_a-sds.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='sds.c' object='libutils_a-sds.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libutils_a_CFLAGS) $(CFLAGS) -c -o libutils_a-sds.obj `if test -f 'sds.c'; then $(CYGPATH_W) 'sds.c'; else $(CYGPATH_W) '$(srcdir)/sds.c'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique

@@ -104,10 +104,13 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libindex_a_AR = $(AR) $(ARFLAGS)
 libindex_a_LIBADD =
-am_libindex_a_OBJECTS = index.$(OBJEXT) fingerprint_cache.$(OBJEXT) \
-	kvstore.$(OBJEXT) kvstore_htable.$(OBJEXT) \
-	sampling_method.$(OBJEXT) segmenting_method.$(OBJEXT) \
-	similarity_detection.$(OBJEXT)
+am_libindex_a_OBJECTS = libindex_a-index.$(OBJEXT) \
+	libindex_a-fingerprint_cache.$(OBJEXT) \
+	libindex_a-kvstore.$(OBJEXT) \
+	libindex_a-kvstore_htable.$(OBJEXT) \
+	libindex_a-sampling_method.$(OBJEXT) \
+	libindex_a-segmenting_method.$(OBJEXT) \
+	libindex_a-similarity_detection.$(OBJEXT)
 libindex_a_OBJECTS = $(am_libindex_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -125,6 +128,10 @@ DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_@AM_V@)
@@ -260,6 +267,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = libindex.a
+libindex_a_CFLAGS = $(GLIB_CFLAGS)
 libindex_a_SOURCES = index.c fingerprint_cache.c kvstore.c kvstore_htable.c sampling_method.c segmenting_method.c similarity_detection.c
 all: all-am
 
@@ -309,13 +317,13 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fingerprint_cache.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/index.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kvstore.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kvstore_htable.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sampling_method.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/segmenting_method.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/similarity_detection.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libindex_a-fingerprint_cache.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libindex_a-index.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libindex_a-kvstore.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libindex_a-kvstore_htable.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libindex_a-sampling_method.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libindex_a-segmenting_method.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libindex_a-similarity_detection.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -330,6 +338,104 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+libindex_a-index.o: index.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-index.o -MD -MP -MF $(DEPDIR)/libindex_a-index.Tpo -c -o libindex_a-index.o `test -f 'index.c' || echo '$(srcdir)/'`index.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-index.Tpo $(DEPDIR)/libindex_a-index.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='index.c' object='libindex_a-index.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-index.o `test -f 'index.c' || echo '$(srcdir)/'`index.c
+
+libindex_a-index.obj: index.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-index.obj -MD -MP -MF $(DEPDIR)/libindex_a-index.Tpo -c -o libindex_a-index.obj `if test -f 'index.c'; then $(CYGPATH_W) 'index.c'; else $(CYGPATH_W) '$(srcdir)/index.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-index.Tpo $(DEPDIR)/libindex_a-index.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='index.c' object='libindex_a-index.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-index.obj `if test -f 'index.c'; then $(CYGPATH_W) 'index.c'; else $(CYGPATH_W) '$(srcdir)/index.c'; fi`
+
+libindex_a-fingerprint_cache.o: fingerprint_cache.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-fingerprint_cache.o -MD -MP -MF $(DEPDIR)/libindex_a-fingerprint_cache.Tpo -c -o libindex_a-fingerprint_cache.o `test -f 'fingerprint_cache.c' || echo '$(srcdir)/'`fingerprint_cache.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-fingerprint_cache.Tpo $(DEPDIR)/libindex_a-fingerprint_cache.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='fingerprint_cache.c' object='libindex_a-fingerprint_cache.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-fingerprint_cache.o `test -f 'fingerprint_cache.c' || echo '$(srcdir)/'`fingerprint_cache.c
+
+libindex_a-fingerprint_cache.obj: fingerprint_cache.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-fingerprint_cache.obj -MD -MP -MF $(DEPDIR)/libindex_a-fingerprint_cache.Tpo -c -o libindex_a-fingerprint_cache.obj `if test -f 'fingerprint_cache.c'; then $(CYGPATH_W) 'fingerprint_cache.c'; else $(CYGPATH_W) '$(srcdir)/fingerprint_cache.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-fingerprint_cache.Tpo $(DEPDIR)/libindex_a-fingerprint_cache.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='fingerprint_cache.c' object='libindex_a-fingerprint_cache.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-fingerprint_cache.obj `if test -f 'fingerprint_cache.c'; then $(CYGPATH_W) 'fingerprint_cache.c'; else $(CYGPATH_W) '$(srcdir)/fingerprint_cache.c'; fi`
+
+libindex_a-kvstore.o: kvstore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-kvstore.o -MD -MP -MF $(DEPDIR)/libindex_a-kvstore.Tpo -c -o libindex_a-kvstore.o `test -f 'kvstore.c' || echo '$(srcdir)/'`kvstore.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-kvstore.Tpo $(DEPDIR)/libindex_a-kvstore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='kvstore.c' object='libindex_a-kvstore.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-kvstore.o `test -f 'kvstore.c' || echo '$(srcdir)/'`kvstore.c
+
+libindex_a-kvstore.obj: kvstore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-kvstore.obj -MD -MP -MF $(DEPDIR)/libindex_a-kvstore.Tpo -c -o libindex_a-kvstore.obj `if test -f 'kvstore.c'; then $(CYGPATH_W) 'kvstore.c'; else $(CYGPATH_W) '$(srcdir)/kvstore.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-kvstore.Tpo $(DEPDIR)/libindex_a-kvstore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='kvstore.c' object='libindex_a-kvstore.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-kvstore.obj `if test -f 'kvstore.c'; then $(CYGPATH_W) 'kvstore.c'; else $(CYGPATH_W) '$(srcdir)/kvstore.c'; fi`
+
+libindex_a-kvstore_htable.o: kvstore_htable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-kvstore_htable.o -MD -MP -MF $(DEPDIR)/libindex_a-kvstore_htable.Tpo -c -o libindex_a-kvstore_htable.o `test -f 'kvstore_htable.c' || echo '$(srcdir)/'`kvstore_htable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-kvstore_htable.Tpo $(DEPDIR)/libindex_a-kvstore_htable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='kvstore_htable.c' object='libindex_a-kvstore_htable.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-kvstore_htable.o `test -f 'kvstore_htable.c' || echo '$(srcdir)/'`kvstore_htable.c
+
+libindex_a-kvstore_htable.obj: kvstore_htable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-kvstore_htable.obj -MD -MP -MF $(DEPDIR)/libindex_a-kvstore_htable.Tpo -c -o libindex_a-kvstore_htable.obj `if test -f 'kvstore_htable.c'; then $(CYGPATH_W) 'kvstore_htable.c'; else $(CYGPATH_W) '$(srcdir)/kvstore_htable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-kvstore_htable.Tpo $(DEPDIR)/libindex_a-kvstore_htable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='kvstore_htable.c' object='libindex_a-kvstore_htable.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-kvstore_htable.obj `if test -f 'kvstore_htable.c'; then $(CYGPATH_W) 'kvstore_htable.c'; else $(CYGPATH_W) '$(srcdir)/kvstore_htable.c'; fi`
+
+libindex_a-sampling_method.o: sampling_method.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-sampling_method.o -MD -MP -MF $(DEPDIR)/libindex_a-sampling_method.Tpo -c -o libindex_a-sampling_method.o `test -f 'sampling_method.c' || echo '$(srcdir)/'`sampling_method.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-sampling_method.Tpo $(DEPDIR)/libindex_a-sampling_method.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='sampling_method.c' object='libindex_a-sampling_method.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-sampling_method.o `test -f 'sampling_method.c' || echo '$(srcdir)/'`sampling_method.c
+
+libindex_a-sampling_method.obj: sampling_method.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-sampling_method.obj -MD -MP -MF $(DEPDIR)/libindex_a-sampling_method.Tpo -c -o libindex_a-sampling_method.obj `if test -f 'sampling_method.c'; then $(CYGPATH_W) 'sampling_method.c'; else $(CYGPATH_W) '$(srcdir)/sampling_method.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-sampling_method.Tpo $(DEPDIR)/libindex_a-sampling_method.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='sampling_method.c' object='libindex_a-sampling_method.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-sampling_method.obj `if test -f 'sampling_method.c'; then $(CYGPATH_W) 'sampling_method.c'; else $(CYGPATH_W) '$(srcdir)/sampling_method.c'; fi`
+
+libindex_a-segmenting_method.o: segmenting_method.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-segmenting_method.o -MD -MP -MF $(DEPDIR)/libindex_a-segmenting_method.Tpo -c -o libindex_a-segmenting_method.o `test -f 'segmenting_method.c' || echo '$(srcdir)/'`segmenting_method.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-segmenting_method.Tpo $(DEPDIR)/libindex_a-segmenting_method.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='segmenting_method.c' object='libindex_a-segmenting_method.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-segmenting_method.o `test -f 'segmenting_method.c' || echo '$(srcdir)/'`segmenting_method.c
+
+libindex_a-segmenting_method.obj: segmenting_method.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-segmenting_method.obj -MD -MP -MF $(DEPDIR)/libindex_a-segmenting_method.Tpo -c -o libindex_a-segmenting_method.obj `if test -f 'segmenting_method.c'; then $(CYGPATH_W) 'segmenting_method.c'; else $(CYGPATH_W) '$(srcdir)/segmenting_method.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-segmenting_method.Tpo $(DEPDIR)/libindex_a-segmenting_method.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='segmenting_method.c' object='libindex_a-segmenting_method.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-segmenting_method.obj `if test -f 'segmenting_method.c'; then $(CYGPATH_W) 'segmenting_method.c'; else $(CYGPATH_W) '$(srcdir)/segmenting_method.c'; fi`
+
+libindex_a-similarity_detection.o: similarity_detection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-similarity_detection.o -MD -MP -MF $(DEPDIR)/libindex_a-similarity_detection.Tpo -c -o libindex_a-similarity_detection.o `test -f 'similarity_detection.c' || echo '$(srcdir)/'`similarity_detection.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-similarity_detection.Tpo $(DEPDIR)/libindex_a-similarity_detection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='similarity_detection.c' object='libindex_a-similarity_detection.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-similarity_detection.o `test -f 'similarity_detection.c' || echo '$(srcdir)/'`similarity_detection.c
+
+libindex_a-similarity_detection.obj: similarity_detection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -MT libindex_a-similarity_detection.obj -MD -MP -MF $(DEPDIR)/libindex_a-similarity_detection.Tpo -c -o libindex_a-similarity_detection.obj `if test -f 'similarity_detection.c'; then $(CYGPATH_W) 'similarity_detection.c'; else $(CYGPATH_W) '$(srcdir)/similarity_detection.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libindex_a-similarity_detection.Tpo $(DEPDIR)/libindex_a-similarity_detection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='similarity_detection.c' object='libindex_a-similarity_detection.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libindex_a_CFLAGS) $(CFLAGS) -c -o libindex_a-similarity_detection.obj `if test -f 'similarity_detection.c'; then $(CYGPATH_W) 'similarity_detection.c'; else $(CYGPATH_W) '$(srcdir)/similarity_detection.c'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique

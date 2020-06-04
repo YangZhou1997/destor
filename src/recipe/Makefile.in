@@ -104,7 +104,7 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 librecipe_a_AR = $(AR) $(ARFLAGS)
 librecipe_a_LIBADD =
-am_librecipe_a_OBJECTS = recipestore.$(OBJEXT)
+am_librecipe_a_OBJECTS = librecipe_a-recipestore.$(OBJEXT)
 librecipe_a_OBJECTS = $(am_librecipe_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -122,6 +122,10 @@ DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_@AM_V@)
@@ -257,6 +261,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = librecipe.a
+librecipe_a_CFLAGS = $(GLIB_CFLAGS)
 librecipe_a_SOURCES = recipestore.c
 all: all-am
 
@@ -306,7 +311,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/recipestore.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librecipe_a-recipestore.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -321,6 +326,20 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+librecipe_a-recipestore.o: recipestore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(librecipe_a_CFLAGS) $(CFLAGS) -MT librecipe_a-recipestore.o -MD -MP -MF $(DEPDIR)/librecipe_a-recipestore.Tpo -c -o librecipe_a-recipestore.o `test -f 'recipestore.c' || echo '$(srcdir)/'`recipestore.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/librecipe_a-recipestore.Tpo $(DEPDIR)/librecipe_a-recipestore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='recipestore.c' object='librecipe_a-recipestore.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(librecipe_a_CFLAGS) $(CFLAGS) -c -o librecipe_a-recipestore.o `test -f 'recipestore.c' || echo '$(srcdir)/'`recipestore.c
+
+librecipe_a-recipestore.obj: recipestore.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(librecipe_a_CFLAGS) $(CFLAGS) -MT librecipe_a-recipestore.obj -MD -MP -MF $(DEPDIR)/librecipe_a-recipestore.Tpo -c -o librecipe_a-recipestore.obj `if test -f 'recipestore.c'; then $(CYGPATH_W) 'recipestore.c'; else $(CYGPATH_W) '$(srcdir)/recipestore.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/librecipe_a-recipestore.Tpo $(DEPDIR)/librecipe_a-recipestore.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='recipestore.c' object='librecipe_a-recipestore.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(librecipe_a_CFLAGS) $(CFLAGS) -c -o librecipe_a-recipestore.obj `if test -f 'recipestore.c'; then $(CYGPATH_W) 'recipestore.c'; else $(CYGPATH_W) '$(srcdir)/recipestore.c'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
