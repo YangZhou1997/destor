@@ -125,14 +125,14 @@ destor can run as follows:
 
 1. start a backup task,
    ```
-   ./destor /path/to/data -p destor.config
-   ./destor ~/ictf2010_100kflow.dat -p destor.config
+   ./destor /path/to/data -p"a line as in config file"
+   ./destor ~/ictf2010_100kflow.dat -p"chunk-avg-size 4096" -p"fingerprint-index near-exact logical"
    ```
 
 2. start a restore task,
    ```
-   ./destor -r<jobid> /dir/to/restore -p destor.config
-   ./destor -r1 ~/ -p destor.config
+   ./destor -r<jobid> /dir/to/restore -p"a line as in config file"
+   ./destor -r1 ~/ -p"chunk-avg-size 4096" -p"fingerprint-index near-exact logical"
    ```
 
 3. show the current statistics of system,
@@ -148,6 +148,7 @@ destor can run as follows:
 5. make a trace
    ```
    ./destor -t /path/to/data
+   ./destor -t ~/ictf2010_100kflow.dat
    ```
 
 Configuration

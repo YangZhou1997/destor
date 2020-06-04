@@ -261,7 +261,6 @@ void destor_stat() {
 }
 
 int main(int argc, char **argv) {
-
 	destor_start();
 
 	int job = DESTOR_BACKUP;
@@ -290,22 +289,24 @@ int main(int argc, char **argv) {
 			break;
 		}
 		default:
+            printf("not selected\n");
 			return 0;
 		}
 	}
 
 	sds path = NULL;
-
 	switch (job) {
 	case DESTOR_BACKUP:
-
+        /**
+         * the contents of argv have also been rearraged. 
+         * optint will now point the next unprocessed argv
+         */
 		if (argc > optind) {
 			path = sdsnew(argv[optind]);
 		} else {
 			fprintf(stderr, "backup job needs a protected path!\n");
 			usage();
 		}
-
 		do_backup(path);
 
 		/*
