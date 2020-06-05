@@ -9,5 +9,6 @@
     "editor.wordWrapColumn": 120,
     "files.associations": {
         "libhashfile.h": "c"
-    }
+    },
+    "python.pythonPath": "/users/yangzhou/anaconda3/bin/python"
 }
