@@ -16,13 +16,13 @@ extern void do_restore(int revision, char *path);
 void do_delete(int jobid);
 extern void make_trace(char *raw_files);
 
-extern int load_config();
-extern void load_config_from_string(sds config);
+extern void load_config(sds config_path);
+extern  load_config_from_string(sds config);
 
 /* : means argument is required.
  * :: means argument is required and no space.
  */
-const char * const short_options = "sr::t::p::h";
+const char * const short_options = "c::sr::t::p::h";
 
 struct option long_options[] = {
 		{ "state", 0, NULL, 's' },
@@ -75,7 +75,7 @@ void check_simulation_level(int last_level, int current_level) {
 	}
 }
 
-void destor_start() {
+void destor_start(sds config_path) {
 
 	/* Init */
 	destor.working_directory = sdsnew("/home/data/working/");
@@ -129,7 +129,7 @@ void destor_start() {
 	 */
 	destor.backup_retention_time = -1;
 
-	load_config();
+	load_config(config_path);
 
 	sds stat_file = sdsdup(destor.working_directory);
 	stat_file = sdscat(stat_file, "/destor.stat");
@@ -261,7 +261,6 @@ void destor_stat() {
 }
 
 int main(int argc, char **argv) {
-	destor_start();
 
 	int job = DESTOR_BACKUP;
 	int revision = -1;
@@ -270,6 +269,12 @@ int main(int argc, char **argv) {
 	while ((opt = getopt_long(argc, argv, short_options, long_options, NULL))
 			!= -1) {
 		switch (opt) {
+		case 'c':{
+			sds config_path = sdsnew(optarg);
+			destor_start(config_path);
+			sdsfree(config_path);
+			break;
+			}
 		case 'r':
 			job = DESTOR_RESTORE;
 			revision = atoi(optarg);

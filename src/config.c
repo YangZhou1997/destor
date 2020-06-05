@@ -322,12 +322,12 @@ void load_config_from_string(sds config) {
 	exit(1);
 }
 
-void load_config() {
+void load_config(sds config_path) {
 	sds config = sdsempty();
 	char buf[DESTOR_CONFIGLINE_MAX + 1];
 
 	FILE *fp;
-	if ((fp = fopen("destor.config", "r")) == 0) {
+	if ((fp = fopen(config_path, "r")) == 0) {
 		destor_log(DESTOR_WARNING, "No destor.config file!");
 		return;
 	}

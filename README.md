@@ -119,20 +119,20 @@ If compile and install are successful, the executable file, destor, should have 
 You can create a config file, destor.config, in where you run destor.
 A sample destor.config is in the project directory.
 
-NOTE: run **rebuild** script before destor to prepare working directory and clear data.
+NOTE: run **rebuild** script before destor to prepare working directory and clear data. 
 
 destor can run as follows:
 
 1. start a backup task,
    ```
-   ./destor /path/to/data -p"a line as in config file"
-   ./destor ~/ictf2010_100kflow.dat -p"chunk-avg-size 4096" -p"fingerprint-index near-exact logical"
+   ./destor -c /path/to/config /path/to/data -p"a line as in config file"
+   ./destor -c ~/destor/destor.config ~/ictf2010_100kflow.dat -p"chunk-avg-size 4096" -p"fingerprint-index near-exact logical"
    ```
 
 2. start a restore task,
    ```
-   ./destor -r<jobid> /dir/to/restore -p"a line as in config file"
-   ./destor -r1 ~/ -p"chunk-avg-size 4096" -p"fingerprint-index near-exact logical"
+   ./destor -c /path/to/config -r<jobid> /dir/to/restore -p"a line as in config file"
+   ./destor -c ~/destor/destor.config -r1 ~/ -p"chunk-avg-size 4096" -p"fingerprint-index near-exact logical"
    ```
 
 3. show the current statistics of system,
@@ -147,8 +147,8 @@ destor can run as follows:
 
 5. make a trace
    ```
-   ./destor -t /path/to/data
-   ./destor -t ~/ictf2010_100kflow.dat
+   ./destor -c /path/to/config -t /path/to/data 
+   ./destor -c ~/destor/destor.config -t ~/ictf2010_100kflow.dat
    ```
 
 Configuration

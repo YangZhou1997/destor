@@ -1,6 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
-DIR=~/data/working
+if [[ $# -ne 1 ]]; then
+    echo "Illegal number of parameters"
+    echo "Ex Usage: ./rebuild ~/working"
+    exit 2
+fi
+
+DIR=$1
 mkdir -p ${DIR}/recipes/
 mkdir -p ${DIR}/index/
 
