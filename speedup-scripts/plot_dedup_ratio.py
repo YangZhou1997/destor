@@ -17,15 +17,25 @@ FIGSIZE=(6, 3.6)
 
 def load(file):
     ratios = []
+    overall_ratio = []
+    total_size = 0
+    stored_size = 0
     lines = open(file, 'r').read().strip('\n').split('\n')
     for line in lines:
         if 'deduplication ratio:' in line:
             splits = line.split()
             dup_ratio = float(splits[2].strip(','))
             ratios.append(dup_ratio)
-    return ratios
+        if 'total size(B):' in line:
+            splits = line.split()
+            total_size += float(splits[2])
+        if 'stored data size(B):' in line:
+            splits = line.split()
+            stored_size += float(splits[3])
+            overall_ratio.append(1-stored_size/total_size)
+    return ratios, overall_ratio
 
-def plot(ratios, name):
+def plot(ratios, name, y_label):
     N = len(ratios)
     # ind = np.arange(N) * 10 + 10
     fig, ax = plt.subplots()
@@ -43,7 +53,7 @@ def plot(ratios, name):
     plt.xticks(xs[::20], labels)
 
     ax.set_xlabel(f'Snapshot version')
-    ax.set_ylabel(f'Dupliation ratio')
+    ax.set_ylabel(y_label)
 
     fig.set_size_inches(FIGSIZE)
     fig.tight_layout()
@@ -53,5 +63,6 @@ def plot(ratios, name):
 
 if __name__ == "__main__":
 
-    ratios = load('./log/macos-4kb.log')
-    plot(ratios, 'macos-4kb')
+    ratios, overall_ratio = load('./log/macos-4kb.log')
+    plot(ratios, 'macos-4kb', 'Per-snapshot dupliation ratio')
+    plot(overall_ratio, 'macos-4kb-overall', 'Overall dupliation ratio')
