@@ -275,6 +275,36 @@ int rabin_chunk_data(unsigned char *p, int n) {
 	return i;
 }
 
+/* the new fixed chunking with insertion/deletion tolerance  */
+int fixed_rabin_chunk_data(unsigned char *p, int n) {
+
+	UINT64 f_break = 0;
+	UINT64 count = 0;
+	UINT64 fp = 0;
+	int i = 1, bufPos = -1;
+
+	unsigned char om;
+	u_int64_t x;
+
+	unsigned char buf[128];
+	memset((char*) buf, 0, 128);
+
+	if (n <= destor.chunk_min_size)
+		return n;
+	else
+		i = destor.chunk_min_size;
+
+	int end = n > destor.chunk_max_size ? destor.chunk_max_size : n;
+	while (i < end) {
+
+		SLIDE(p[i - 1], fp, bufPos, buf);
+		if ((fp & rabin_mask) == BREAKMARK_VALUE)
+			break;
+		i++;
+	}
+	return i;
+}
+
 /*
  * A variant of rabin chunking.
  * We use a larger avg chunk size when the current size is small,

@@ -4,6 +4,10 @@
 
 static pthread_t read_t;
 
+/** 
+ * path is the current file path
+ * jcr.path is the backup dir/file path. 
+ */
 static void read_file(sds path) {
 	static unsigned char buf[DEFAULT_BLOCK_SIZE];
 

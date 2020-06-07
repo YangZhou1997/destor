@@ -95,7 +95,9 @@ void load_config_from_string(sds config) {
 				destor.chunk_algorithm = CHUNK_FILE;
 			} else if (strcasecmp(argv[1], "ae") == 0) {
 				destor.chunk_algorithm = CHUNK_AE;
-			} else {
+			} else if (strcasecmp(argv[1], "fixed rabin") == 0) {
+				destor.chunk_algorithm = CHUNK_FIXED_RABIN;
+            } else {
 				err = "Invalid chunk algorithm";
 				goto loaderr;
 			}
