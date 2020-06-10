@@ -99,11 +99,6 @@ static void* chunk_thread(void *arg) {
 		sync_queue_push(chunk_queue, c);
 		leftoff = 0;
 		c = NULL;
-
-		if(destor.chunk_algorithm == CHUNK_RABIN ||
-				destor.chunk_algorithm == CHUNK_NORMALIZED_RABIN)
-			windows_reset();
-
 	}
 
 	free(leftbuf);
@@ -211,11 +206,6 @@ static void* chunk_thread_new(void *arg) {
 		sync_queue_push(chunk_queue, c);
 		leftoff = 0;
 		c = NULL;
-
-		if(destor.chunk_algorithm == CHUNK_RABIN ||
-				destor.chunk_algorithm == CHUNK_NORMALIZED_RABIN ||
-                destor.chunk_algorithm == CHUNK_FIXED_RABIN)
-			windows_reset();
 
 	}
 

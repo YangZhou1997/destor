@@ -3,6 +3,8 @@ from matplotlib import rcParams
 import numpy as np
 from util_plot import *
 from util_serilize import *
+import glob
+import os
 
 # params = {
 #     'axes.labelsize': 20,
@@ -35,7 +37,7 @@ def load(file):
             overall_ratio.append(1-stored_size/total_size)
     return ratios, overall_ratio
 
-def plot(ratios, name, y_label):
+def plot(ratios, taskname, fig_name, y_label):
     N = len(ratios)
     # ind = np.arange(N) * 10 + 10
     fig, ax = plt.subplots()
@@ -43,26 +45,72 @@ def plot(ratios, name, y_label):
     xs = [i for i in range(N)]
     ys = ratios
 
+    cnt = 0
     legends = []
-    p1, = ax.plot(xs, ys, color=colors[0], linewidth=1, linestyle=linestyles[0])
+    p1, = ax.plot(xs, ys, linestyle = linestyles[cnt], marker = markers[cnt], markersize = markersizes[cnt], color=colors[cnt], linewidth=3)
+    
     legends.append(p1)
 
-    ax.legend(legends, ['MacOS server',])
+    ax.legend(legends, [taskname, ])
 
-    labels = list(map(lambda x: f'{x}', xs[::20]))
-    plt.xticks(xs[::20], labels)
+    labels = list(map(lambda x: f'{x}', xs[::len(xs)//5]))
+    plt.xticks(xs[::len(xs)//5], labels)
 
-    ax.set_xlabel(f'Snapshot version')
+    ax.set_xlabel(f'Backup version')
     ax.set_ylabel(y_label)
 
     fig.set_size_inches(FIGSIZE)
     fig.tight_layout()
 
-    fig.savefig(f'figs/dup_ratio_{name}.pdf', bbox_inches='tight')
+    fig.savefig(f'figs/dup_ratio_{fig_name}.pdf', bbox_inches='tight')
     fig.clf()
 
-if __name__ == "__main__":
+def plot_all(ratios_list, taskname_list, fig_name, y_label):
+    fig, ax = plt.subplots()
+    legends = []
+    max_N = 0
+    for cnt, ratios in enumerate(ratios_list):
+        N = len(ratios)
+        max_N = max(max_N, N)
+        xs = [i for i in range(N)]
+        ys = ratios
+        p1, = ax.plot(xs, ys, linestyle = linestyles[cnt], marker = markers[cnt], markersize = markersizes[cnt], color=colors[cnt], linewidth=3)
+        legends.append(p1)
 
-    ratios, overall_ratio = load('./log/macos-4kb.log')
-    plot(ratios, 'macos-4kb', 'Per-snapshot dupliation ratio')
-    plot(overall_ratio, 'macos-4kb-overall', 'Overall dupliation ratio')
+    ax.legend(legends, taskname_list)
+
+    xs = [i for i in range(max_N)]
+    labels = list(map(lambda x: f'{x}', xs))
+    plt.xticks(xs, labels)
+
+    ax.set_xlabel(f'Backup version')
+    ax.set_ylabel(y_label)
+
+    fig.set_size_inches(FIGSIZE)
+    fig.tight_layout()
+
+    fig.savefig(f'figs/{fig_name}.pdf', bbox_inches='tight')
+    fig.clf()
+
+def plot_type(datasets, type):
+    ratios_list = []
+    overall_ratios_list = []
+    taskname_list = []
+    for dataset in datasets:
+        head, tail = os.path.split(dataset)
+        taskname = f'{tail}'.split('.')[0]
+        taskname_list.append(taskname)
+
+        ratios, overall_ratios = load(f'./log/{taskname}.log')
+        ratios_list.append(ratios)
+        overall_ratios_list.append(overall_ratios)
+
+    plot_all(ratios_list, taskname_list, f'{type}-per-version', 'Self-redundancy per version')
+    plot_all(overall_ratios_list, taskname_list, f'{type}-over-time', 'Removed redundancy over time')
+
+if __name__ == "__main__":
+    datasets = glob.glob(f'./log/*-perfile.log')
+    plot_type(datasets, 'non-cumu')
+    datasets2 = glob.glob(f'./log/*.log')
+    datasets = list(set(datasets2) - set(datasets))
+    plot_type(datasets, 'cumu')

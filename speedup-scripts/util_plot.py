@@ -30,7 +30,7 @@ linestyles = [
      (0, (3, 1, 1, 1, 1, 1))]
 
 markers = ['*', '^', 'o', 'P', 'p', 'v']
-markersizes = [30, 24, 24, 24, 24, 24]
+markersizes = [15, 12, 12, 12, 12, 12]
 patterns = [ "\\" , "/" , "|" , "+" , "-", ".", "*","x", "o", "O" ]
 
 def fix_hist_step_vertical_line_at_end(ax):
