@@ -47,7 +47,7 @@ def plot(ratios, taskname, fig_name, y_label):
 
     cnt = 0
     legends = []
-    p1, = ax.plot(xs, ys, linestyle = linestyles[cnt], marker = markers[cnt], markersize = markersizes[cnt], color=colors[cnt], linewidth=3)
+    p1, = ax.plot(xs, ys, linestyle = linestyles[cnt], marker = markers[cnt], markersize = markersizes[cnt], color=colors2[cnt], linewidth=3)
     
     legends.append(p1)
 
@@ -74,7 +74,7 @@ def plot_all(ratios_list, taskname_list, fig_name, y_label):
         max_N = max(max_N, N)
         xs = [i for i in range(N)]
         ys = ratios
-        p1, = ax.plot(xs, ys, linestyle = linestyles[cnt], marker = markers[cnt], markersize = markersizes[cnt], color=colors[cnt], linewidth=3)
+        p1, = ax.plot(xs, ys, linestyle = linestyles[cnt], marker = markers[cnt], markersize = markersizes[cnt], color=colors2[cnt], linewidth=3)
         legends.append(p1)
 
     ax.legend(legends, taskname_list)
@@ -105,8 +105,10 @@ def plot_type(datasets, type):
         ratios_list.append(ratios)
         overall_ratios_list.append(overall_ratios)
 
-    plot_all(ratios_list, taskname_list, f'{type}-per-version', 'Self-redundancy per version')
-    plot_all(overall_ratios_list, taskname_list, f'{type}-over-time', 'Removed redundancy over time')
+    if type == 'non-cumu':
+        plot_all(ratios_list, taskname_list, f'{type}-per-version', 'Self-redundancy per version')
+    elif type == 'cumu':    
+        plot_all(overall_ratios_list, taskname_list, f'{type}-over-time', 'Removed redundancy over time')
 
 if __name__ == "__main__":
     datasets = glob.glob(f'./log/*-perfile.log')

@@ -7,7 +7,7 @@ import glob
 
 cmd_kv = {
     'clean_working_set': 'cd ~/destor && unbuffer ./rebuild {working_dir}',
-    'clean': 'cd ~/destor && unbuffer ./rebuild {working_dir} && rm -f ~/destor/speedup-scripts/log/{task_name}.log',
+    'clean': 'cd ~/destor && unbuffer ./rebuild {working_dir} && > ~/destor/speedup-scripts/log/{task_name}.log',
     'dedup': 'cd ~/destor && unbuffer ./destor -c"{config_path}" {dedup_file} -p"{config_line}" &>> ~/destor/speedup-scripts/log/{task_name}.log',
 }
 
@@ -51,17 +51,41 @@ if __name__ == "__main__":
     config_path = '/home/administrator/destor/speedup-scripts/config/destor.config'
     config_line = f'working-directory "{working_dir}"'
 
-    datasets = glob.glob(f'/home/administrator/datasets/*')
-    for dataset in datasets:
-        head, tail = os.path.split(dataset)
-        task_name = f'{tail}'
-        if task_name in ['macos', 'fslhomes']:
-            config_path = '/home/administrator/destor/speedup-scripts/config/destor_fsl.config'
-            backups = glob.glob(f'{dataset}/*/*.32kb.hash.anon')
-        else:
-            config_path = '/home/administrator/destor/speedup-scripts/config/destor.config'
-            backups = glob.glob(f'{dataset}/*')
-        backups.sort()
-        print(task_name, backups)
-        # do_dedup(backups, task_name, working_dir, config_path, config_line)
-        do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+    # datasets = glob.glob(f'/home/administrator/datasets/*')
+    # for dataset in datasets:
+    #     head, tail = os.path.split(dataset)
+    #     task_name = f'{tail}'
+    #     if task_name in ['macos', 'fslhomes']:
+    #         config_path = '/home/administrator/destor/speedup-scripts/config/destor_fsl.config'
+    #         backups = glob.glob(f'{dataset}/*/*.32kb.hash.anon')
+    #     else:
+    #         config_path = '/home/administrator/destor/speedup-scripts/config/destor.config'
+    #         backups = glob.glob(f'{dataset}/*')
+    #     backups.sort()
+    #     print(task_name, backups)
+    #     # do_dedup(backups, task_name, working_dir, config_path, config_line)
+    #     do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+
+    
+    # for scale in [2, 5, 10, 100]:
+    #     backups = glob.glob(f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_orc_{scale}.db/*')
+    #     task_name=f'tpcds{scale}'
+    #     do_dedup(backups, task_name, working_dir, config_path, config_line)
+    #     do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+
+    # for scale in [2, 5, 10, 100]:
+    #     backups = glob.glob(f'/home/administrator/dedup-data/warehouse/tpch_flat_orc_{scale}.db/*')
+    #     task_name=f'tpch{scale}'
+    #     do_dedup(backups, task_name, working_dir, config_path, config_line)
+    #     do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+
+
+    backups = list(map(lambda x: f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_orc_{x}.db', [2, 5, 10, 100]))
+    task_name='tpcds'
+    do_dedup(backups, task_name, working_dir, config_path, config_line)
+    do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+
+    backups = list(map(lambda x: f'/home/administrator/dedup-data/warehouse/tpch_flat_orc_{x}.db', [2, 5, 10, 100]))
+    task_name='tpch'
+    do_dedup(backups, task_name, working_dir, config_path, config_line)
+    do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
