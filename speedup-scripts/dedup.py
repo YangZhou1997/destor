@@ -80,12 +80,24 @@ if __name__ == "__main__":
     #     do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
 
 
-    backups = list(map(lambda x: f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_orc_{x}.db', [2, 5, 10, 100]))
-    task_name='tpcds'
+    # backups = list(map(lambda x: f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_orc_{x}.db', [2, 5, 10, 100]))
+    # task_name='tpcds'
+    # do_dedup(backups, task_name, working_dir, config_path, config_line)
+    # do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+
+    # backups = list(map(lambda x: f'/home/administrator/dedup-data/warehouse/tpch_flat_orc_{x}.db', [2, 5, 10, 100]))
+    # task_name='tpch'
+    # do_dedup(backups, task_name, working_dir, config_path, config_line)
+    # do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+
+
+    backups = glob.glob(f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_orc_2.db/*')
+    task_name=f'tpcds2'
     do_dedup(backups, task_name, working_dir, config_path, config_line)
     do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
 
-    backups = list(map(lambda x: f'/home/administrator/dedup-data/warehouse/tpch_flat_orc_{x}.db', [2, 5, 10, 100]))
-    task_name='tpch'
-    do_dedup(backups, task_name, working_dir, config_path, config_line)
-    do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+    # backups = glob.glob(f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_parquet_2.db/*')
+    # task_name=f'tpcds2_parquet'
+    # do_dedup(backups, task_name, working_dir, config_path, config_line)
+    # do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+
