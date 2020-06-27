@@ -83,7 +83,7 @@ def plot_all(ratios_list, taskname_list, fig_name, y_label):
     labels = list(map(lambda x: f'{x}', xs))
     plt.xticks(xs, labels)
 
-    ax.set_xlabel(f'Backup version')
+    ax.set_xlabel(f'DB tables')
     ax.set_ylabel(y_label)
 
     fig.set_size_inches(FIGSIZE)
@@ -99,16 +99,16 @@ def plot_type(datasets, type):
     for dataset in datasets:
         head, tail = os.path.split(dataset)
         taskname = f'{tail}'.split('.')[0]
-        taskname_list.append(taskname)
+        taskname_list.append(taskname.replace('_', '\_'))
 
         ratios, overall_ratios = load(f'./log/{taskname}.log')
         ratios_list.append(ratios)
         overall_ratios_list.append(overall_ratios)
 
     if type == 'non-cumu':
-        plot_all(ratios_list, taskname_list, f'{type}-per-version', 'Self-redundancy per version')
+        plot_all(ratios_list, taskname_list, f'{type}-per-version', 'Self-redundancy per table')
     elif type == 'cumu':    
-        plot_all(overall_ratios_list, taskname_list, f'{type}-over-time', 'Removed redundancy over time')
+        plot_all(overall_ratios_list, taskname_list, f'{type}-over-time', 'Redundancy acorss tables')
 
 if __name__ == "__main__":
     datasets = glob.glob(f'./log/*-perfile.log')

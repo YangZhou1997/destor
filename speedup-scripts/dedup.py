@@ -91,13 +91,19 @@ if __name__ == "__main__":
     # do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
 
 
-    backups = glob.glob(f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_orc_2.db/*')
-    task_name=f'tpcds2'
-    do_dedup(backups, task_name, working_dir, config_path, config_line)
-    do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+    # backups = glob.glob(f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_orc_2.db/*')
+    # task_name=f'tpcds2'
+    # do_dedup(backups, task_name, working_dir, config_path, config_line)
+    # do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
 
     # backups = glob.glob(f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_parquet_2.db/*')
     # task_name=f'tpcds2_parquet'
     # do_dedup(backups, task_name, working_dir, config_path, config_line)
     # do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
+
+
+    backups =[f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_parquet_2.db', f'/home/administrator/dedup-data/warehouse/tpcds_bin_partitioned_parquet_2_2.db']
+    task_name = f'tpcds2_parquet_two_db'
+    do_dedup(backups, task_name, working_dir, config_path, config_line)
+    do_dedup_per_file(backups, f'{task_name}-perfile', working_dir, config_path, config_line)
 
